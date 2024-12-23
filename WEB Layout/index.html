@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dasboard</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d1b2a;
+      color: #fff;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* Main Content */
+    .main {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1b263b;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card.large {
+      grid-column: span 2;
+    }
+
+    .card.toggle .toggle-btn {
+      padding: 10px 20px;
+      background: #2ec4b6;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card.toggle .toggle-btn:hover {
+      background: #28b0a3;
+    }
+
+    /* Control Section */
+    .control-section {
+      margin-top: 40px;
+    }
+
+    .control-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .control-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .control-group {
+      background: #1b263b;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-group h3 {
+      margin-bottom: 10px;
+    }
+
+    .control-group button {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #2ec4b6;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .control-group button:hover {
+      background: #28b0a3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main {
+        padding: 10px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .control-groups {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Main Content -->
+    <main class="main">
+      <header class="header">
+        <h2>Sistem Monitoring dan Kontrol Greenhouse</h2>
+      </header>
+
+      <!-- Monitoring Parameters -->
+      <section class="monitoring-parameters">
+        <h3>Monitoring Parameter</h3>
+        <div class="cards">
+          <div class="card">
+            <h3>Suhu</h3>
+            <p>24.0°C</p>
+          </div>
+          <div class="card">
+            <h3>Kelembaban</h3>
+            <p>60.0%</p>
+          </div>
+          <div class="card">
+            <h3>Intensitas Cahaya</h3>
+            <p>800 lux</p>
+          </div>
+          <div class="card">
+            <h3>pH</h3>
+            <p>6.5</p>
+          </div>
+          <div class="card">
+            <h3>PPM</h3>
+            <p>300</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actuator States -->
+      <section class="actuator-states">
+        <h3>Kondisi Aktuator</h3>
+        <div class="cards">
+          <div class="card">
+            <h3>Aktuator 1</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 2</h3>
+            <p>Padam</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 3</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 4</h3>
+            <p>Padam</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 5</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 6</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 7</h3>
+            <p>Padam</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 8</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 9</h3>
+            <p>Padam</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 10</h3>
+            <p>Menyala</p>
+          </div>
+          <div class="card">
+            <h3>Aktuator 11</h3>
+            <p>Padam</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Control Section -->
+      <div class="control-section">
+        <h2>Kontrol Sistem</h2>
+
+        <div class="control-groups">
+          <div class="control-group">
+            <h3>Kipas</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+
+          <div class="control-group">
+            <h3>Sprayer</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+
+          <div class="control-group">
+            <h3>Lampu</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+
+          <div class="control-group">
+            <h3>Pompa Penyiram</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+
+          <div class="control-group">
+            <h3>Pompa Isi Tangki</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+
+          <div class="control-group">
+            <h3>Mixer</h3>
+            <button>ON</button>
+            <button>OFF</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
